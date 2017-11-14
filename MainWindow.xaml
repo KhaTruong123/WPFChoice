@@ -1,0 +1,29 @@
+﻿<Window x:Class="Wpf_concept.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_concept"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ComboBox 
+            Width="100" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center" 
+            Margin="110,148,0,137"
+            ItemsSource="{Binding Path=Categories}" Height="34" />
+        <ComboBox 
+            Width="100" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center" 
+            Margin="110,196,0,90"
+            ItemsSource="{Binding Path=Component}" Height="33" />
+        <ComboBox 
+            Width="100" 
+            HorizontalAlignment="Left" 
+            VerticalAlignment="Center" 
+            Margin="110,245,0,43"
+            ItemsSource="{Binding Path=CV}" Height="31" />
+    </Grid>
+</Window>
