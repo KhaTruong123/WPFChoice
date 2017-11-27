@@ -54,6 +54,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BuiltItems\CVContent.cs" />
+    <Compile Include="Domain\Common\ViewModel\AbstractViewModel.cs" />
+    <Compile Include="Domain\TreeHiearchy\Model\PreviousAnsModel.cs" />
+    <Compile Include="Domain\TreeHiearchy\Model\TreeModel.cs" />
+    <Compile Include="Domain\TreeHiearchy\ViewModel\PreviousAnsViewModel.cs" />
+    <Compile Include="Domain\TreeHiearchy\ViewModel\TreeViewModel.cs" />
+    <Compile Include="Domain\TreeHiearchy\View\TreeView.xaml.cs">
+      <DependentUpon>TreeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Enums\EnumComponentType.cs" />
+    <Compile Include="Restriction\FIlter.cs" />
+    <Compile Include="Restriction\RestrictedData.cs" />
+    <Page Include="Domain\TreeHiearchy\View\TreeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,18 +79,16 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="BuiltItems\Category.cs" />
-    <Compile Include="BuiltItems\Choice.cs" />
     <Compile Include="BuiltItems\Component.cs" />
     <Compile Include="BuiltItems\ComponentValue.cs" />
-    <Compile Include="BuiltItems\Static.cs" />
-    <Compile Include="Execution.cs" />
+    <Compile Include="ParserConstraint.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Parser.cs" />
+    <Compile Include="ParserDefinition.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -99,6 +113,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="XMLfiles\Constraints.xml" />
+    <Resource Include="XMLfiles\DefCommponent_ver1.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

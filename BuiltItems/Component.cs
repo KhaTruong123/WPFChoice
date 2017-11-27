@@ -11,34 +11,40 @@ namespace Wpf_concept.BuiltItems
     {
         public string Name { get { return _name; } }
         public Category Category { get { return _category; } }
-        public string CategoryName { get { return _categoryName; } }
         public List<ComponentValue> CVList { get { return _cvList; } }
-        public List<string> CVNameList { get { return _cvNameList; } }
-        public int order { get; set; }
-        public int ID { get; set; }
+        //public List<string> CVNameList { get { return _cvNameList; } }
+        //public int Order { get; set; }
+        //public int ID { get; set; }
 
         private string _name;
         private Category _category;
-        private string _categoryName;
         private List<ComponentValue> _cvList = new List<ComponentValue>();
-        private List<string> _cvNameList = new List<string>();
         public Component(XElement compElement)
         {
             _name = compElement.Attribute("name").Value;
-            var listCV = compElement.Elements("CompValue");
-            foreach (var CV in listCV)
-            {
-                //var newCV = new ComponentValue(CV);
-                //newCV.GetComponentName(this);
-                //_cvList.Add(newCV);
-                _cvNameList.Add(CV.Attribute("value").Value);
-            }
-            _categoryName = compElement.Parent.Attribute("name").Value;
         }
 
-        public void GetCategoryName(Category category)
+        public Component(Category category, XElement compElement)
         {
+            _name = compElement.Attribute("name").Value;
             _category = category;
+            GetCV(compElement);
+        }
+
+        public override string ToString()
+        {
+            return Name;
+        }
+
+        private void GetCV(XElement xElement)
+        {
+            List<XElement> CVs = xElement.Elements().ToList();
+            foreach (var cv in CVs)
+            {
+                _cvList.Add(new ComponentValue(cv,this));
+            }
+
+            //CVs.ForEach(t => _cvList.Add(new ComponentValue(xElement, this)));
         }
     }
 }

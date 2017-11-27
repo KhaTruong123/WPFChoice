@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<FlexSpot xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="DefCommponent_ver1.xsd">
+  <Category name="Basic Configuration">
+    <Component name="Platform">
+      <CompValue value="Single" path="Platform 1R2C.rslib"/>
+      <CompValue value="Dual" path="Platform 2R2C.rslib"/>
+    </Component>
+    <Component name="Robot">
+      <CompValue value="IRB 6700">
+        <Preview path="IRB6700_150_320__*.rslib"/>
+        <Choice name="Version" value="IRB 6700-200/2.6" path="IRB6700_200_260__*.rslib">
+          <Static name="Capacity" value="200 kg"/>
+          <Static name="Reach" value="2.60 m"/>
+        </Choice>
+        <Choice name="Version" value="IRB 6700-235/2.65" path="IRB6700_235_265__*.rslib">
+          <Static name="Capacity" value="235 kg"/>
+          <Static name="Reach" value="2.65 m"/>
+        </Choice>
+        <Choice name="Version" value="IRB 6700-205/2.8" path="IRB6700_205_280__*.rslib">
+          <Static name="Capacity" value="205 kg"/>
+          <Static name="Reach" value="2.80 m"/>
+        </Choice>
+        <Choice name="Version" value="IRB 6700-245/3.0 " path="IRB6700_245_300__*.rslib">
+          <Static name="Capacity" value="245 kg"/>
+          <Static name="Reach" value="3.00 m"/>
+        </Choice>
+      </CompValue>
+      <CompValue value="IRB 6620">
+        <Preview path="IRB6620_150_220_G_*.rslib"/>
+        <Choice name="Version" value="IRB 6620-150/2.2" path="IRB6620_150_220_G_*.rslib">
+          <Static name="Capacity" value="150  kg"/>
+          <Static name="Reach" value="2.20 m"/>
+        </Choice>
+      </CompValue>
+    </Component>
+    <Component name="Turning Table">
+      <CompValue value="TT 750">
+        <Preview path=""/>
+        <Choice name="Capacity (kg)" value="750"/>
+        <Static name="Number of axis" value="1"/>
+      </CompValue>
+      <CompValue value="IRBMP-R 1000">
+        <Preview path=""/>
+        <Choice name="Capacity (kg)" value="750"/>
+        <Static name="Number of axis" value="3"/>
+      </CompValue>
+      <CompValue value="Flex-R 750">
+        <Preview path=""/>
+        <Choice name="Capacity (kg)" value="750"/>
+        <Static name="Number of axis" value="3"/>
+      </CompValue>
+    </Component>
+  </Category>
+  <Category name="Options">
+    <Component name="Welding Gun">
+      <CompValue value="ABB - Flex Gun">
+        <Preview path=""/>
+        <Choice name="Type" value="C/J" path=""/>
+        <Choice name="Type" value="X" path=""/>
+        <Choice name="Mounting" value="90 degrees"/>
+        <Choice name="Mounting" value="40 degrees"/>
+        <Choice name="Mounting" value="Back 30 degrees"/>
+        <Choice name="Mounting" value="Multi "/>
+        <Choice name="Mounting" value="Back "/>
+        <Choice name="Mounting" value="Top "/>
+        <Choice name="Arm" value="Standard"/>
+      </CompValue>
+      <CompValue value="ARO - 3G">
+        <Preview path=""/>
+        <Choice name="Type" value="C/J" path=""/>
+        <Choice name="Type" value="X" path=""/>
+        <Choice name="Mounting" value="Back 30 degrees"/>
+        <Choice name="Mounting" value="Multi "/>
+        <Choice name="Mounting" value="Back "/>
+        <Choice name="Mounting" value="Top "/>
+        <Choice name="Arm" value="Standard"/>        
+      </CompValue>
+      <CompValue value="SERRA - XC45">
+        <Preview path=""/>
+        <Choice name="Type" value="C/J" path=""/>
+        <Choice name="Type" value="X" path=""/>
+        <Choice name="Mounting" value="Back 30 degrees"/>
+        <Choice name="Mounting" value="Multi "/>
+        <Choice name="Mounting" value="Back "/>
+        <Choice name="Mounting" value="Top "/>
+        <Choice name="Arm" value="Standard"/>        
+      </CompValue>
+    </Component>
+  </Category>
+</FlexSpot>

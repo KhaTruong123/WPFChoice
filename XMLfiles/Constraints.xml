@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <!--Name: component level, Value: CompValue level-->
+  <Constrain parentName="Platform" parentValue="Dual" childName="Turning Table" childValue="IRBMP-R 1000"/>
+  <Constrain parentName="Robot" parentValue="IRB 6620" childName="Welding Gun" childValue="ABB - Flex Gun" />
+
+</Root>

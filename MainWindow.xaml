@@ -4,26 +4,47 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_concept"
+        xmlns:built="clr-namespace:Wpf_concept.BuiltItems"
+        xmlns:viewModel="clr-namespace:Wpf_concept.ViewModel"
+        xmlns:model="clr-namespace:Wpf_concept.Domain.TreeHiearchy.Model"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        <ComboBox 
-            Width="100" 
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Center" 
-            Margin="110,148,0,137"
-            ItemsSource="{Binding Path=Categories}" Height="34" />
-        <ComboBox 
-            Width="100" 
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Center" 
-            Margin="110,196,0,90"
-            ItemsSource="{Binding Path=Component}" Height="33" />
-        <ComboBox 
-            Width="100" 
-            HorizontalAlignment="Left" 
-            VerticalAlignment="Center" 
-            Margin="110,245,0,43"
-            ItemsSource="{Binding Path=CV}" Height="31" />
-    </Grid>
+        Title="MainWindow" Height="350" Width="725">
+    <DockPanel Margin="0,0,2,0">
+        <TreeView Height="309" HorizontalAlignment="Left" Width="152" 
+                   x:Name="MainTreeView"  VerticalAlignment="Top" ItemsSource="{Binding TreeItemsColletions}">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type model:TreeModel}" 
+                                            ItemsSource="{Binding Childs}">
+                    <TextBlock Text="{Binding Name}"  FontWeight="Light"/>
+                </HierarchicalDataTemplate>
+            </TreeView.Resources>
+        </TreeView>
+        <Grid HorizontalAlignment="Left" Width="210" Name="CVPanel">
+            <!--<ComboBox ItemsSource="{Binding ComponentValueIems}" DisplayMemberPath="Name"-->
+            <ComboBox DisplayMemberPath="Value" 
+                      Name="ComboBox_CV" 
+                      HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,0,0,0" Height="24" Width="118">
+                <!--SelectedItem="{Binding SelectedComponentValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"-->
+            </ComboBox>
+
+            <ComboBox Margin="10,80,42,194" Height="24" Width="150"
+                      Name="ComboBox_CVContent" Visibility="Hidden" 
+                      DisplayMemberPath="Value">
+            </ComboBox>
+        </Grid>
+        <!--<DockPanel HorizontalAlignment="Left" Width="164" Name="CVPanel">
+            <ComboBox ItemsSource="{Binding ComponentValueChoices}" DisplayMemberPath="Value" 
+                      Name="ComboBox_CV" 
+                      HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,36,0,0" Height="24" Width="118">
+            </ComboBox>
+        </DockPanel>-->
+        <DockPanel HorizontalAlignment="Right" Width="356" DockPanel.Dock="Right">
+
+            <ListBox Name="lb_preAnsListRight" MinWidth="160"
+                     VerticalAlignment="Bottom" HorizontalAlignment="Right" DockPanel.Dock="Right"  Height="100" Width="189" />
+            <!--<ListBox Name="lb_preAnsListLeft" MinWidth="160"
+                VerticalAlignment="Bottom" HorizontalAlignment="Right" DockPanel.Dock="Right"  Height="100" />-->
+
+        </DockPanel>
+    </DockPanel>
 </Window>
